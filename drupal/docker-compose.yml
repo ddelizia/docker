@@ -1,0 +1,13 @@
+wordpress:
+  image: drupal
+  ports:
+    - "8083:80"
+  links:
+    - mysqldrupal:mysql
+mysqldrupal:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: drupal
+    MYSQL_USER: drupal
+    MYSQL_PASSWORD: drupal

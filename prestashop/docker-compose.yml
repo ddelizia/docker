@@ -1,0 +1,23 @@
+prestashop:
+  image: prestashop/prestashop
+  ports:
+    - "8080:80"
+  links:
+    - mysqlprestashop:mysql
+  environment:
+    DB_SERVER: mysql
+    DB_USER: prestashop
+    DB_PASSWD: prestashop
+    DB_NAME: prestashop
+    PS_LANGUAGE: it
+    PS_COUNTRY: it
+    ADMIN_MAIL: ddelizia@gmail.com
+    ADMIN_PASSWD: prestashop_demo
+    PS_INSTALL_AUTO: 1
+mysqlprestashop:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: prestashop
+    MYSQL_USER: prestashop
+    MYSQL_PASSWORD: prestashop

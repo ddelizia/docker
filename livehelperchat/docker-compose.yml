@@ -1,0 +1,13 @@
+livehelperchat:
+  image: cthulhu666/docker-livehelperchat
+  links:
+    - mysqllivehelperchat:mysql
+  ports:
+    - 8085:80
+mysqllivehelperchat:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: livehelperchat
+    MYSQL_USER: livehelperchat
+    MYSQL_PASSWORD: livehelperchat

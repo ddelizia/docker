@@ -1,0 +1,9 @@
+letschat:
+  image: sdelements/lets-chat
+  links:
+    - mongoletschat:mongo
+  ports:
+    - 8084:8080
+    - 5222:5222
+mongoletschat:
+  image: mongo:latest
